@@ -4,6 +4,9 @@ node_modules/
 # Cloudflare
 .wrangler/
 
+# CV
+Cv_rizki/
+
 # System files
 .DS_Store
 Thumbs.db
