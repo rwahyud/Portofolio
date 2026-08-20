@@ -325,6 +325,7 @@ const translations = {
     'hero.desc1': 'Gue Rizki Tri Wahyudi, Project Manager & QA Engineer yang passionate dengan pengalaman luas di Frontend development. Berdomisili di Indonesia.',
     'hero.desc2': 'Sejak 2020, gue seneng banget ngehadepin tantangan teknis yang kompleks, ngubah jadi solusi yang efisien, reliable, dan user-friendly. Kalau lagi gak manage project atau test system, biasanya gue lagi explore teknologi baru, optimasi workflow, atau nikmatin secangkir kopi.',
     'hero.btnWork': 'Lihat Proyek Gue',
+    'hero.btnCV': 'Download CV',
     'visitor.title': 'Visitor saat ini:',
     'visitor.orang': 'orang',
     'skills.title': 'Skill Gue.',
@@ -431,6 +432,7 @@ const translations = {
     'hero.desc1': "I'm Rizki Tri Wahyudi, a passionate Project Manager and Quality Assurance Engineer with extensive experience in Frontend development. Based in Indonesia.",
     'hero.desc2': "Since 2020, I've enjoyed tackling complex technical challenges, transforming them into efficient, reliable, and user-friendly solutions. When I'm not managing projects or testing systems, you'll find me exploring new technologies, optimizing workflows, or simply enjoying a good cup of coffee.",
     'hero.btnWork': 'View My Work',
+    'hero.btnCV': 'Download CV',
     'visitor.title': 'Visitors now:',
     'visitor.orang': 'people',
     'skills.title': 'My Skills.',
@@ -610,7 +612,7 @@ const projects = [
     tags: ['Figma', 'UI/UX'],
     link: 'figma.html',
     bg: 'figma',
-    img: 'image/figma-ui.jpg'
+    img: 'image/logo-figma.png'
   },
   {
     title: 'Website GPX',
@@ -621,7 +623,7 @@ const projects = [
     tags: ['HTML', 'CSS', 'JS', 'Firebase', 'PWA'],
     link: 'https://website-gpx-95f38.web.app/',
     bg: 'gpx',
-    img: ''
+    img: 'image/logowebsite-GPX.png'
   },
   {
     title: 'Tatami Control',
