@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Automation Sika — RTW Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gradient-blobs .blob { opacity: 0.04; }
+    .bg-shape { opacity: 0.06; }
+
+    .project-hero {
+      padding: 140px 24px 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(34,211,238,0.1);
+      position: relative;
+      z-index: 2;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 32px;
+      transition: 0.2s;
+    }
+    .back-link:hover { color: #22d3ee; }
+    .project-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .project-meta {
+      display: flex;
+      gap: 24px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+    }
+    .project-meta span { color: #a855f7; text-shadow: 0 0 12px rgba(168,85,247,0.3); }
+    .project-hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .project-section {
+      padding: 64px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(34,211,238,0.06);
+      position: relative;
+      z-index: 2;
+    }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: #a855f7;
+      margin-bottom: 8px;
+      display: block;
+      text-shadow: 0 0 12px rgba(168,85,247,0.4);
+    }
+    .project-section h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .project-section p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .approach-card {
+      padding: 24px;
+      background: rgba(15,15,25,0.6);
+      border: 1px solid rgba(34,211,238,0.1);
+      transition: 0.3s;
+    }
+    .approach-card:hover {
+      border-color: rgba(34,211,238,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .approach-card h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .approach-card p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    .qa-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .qa-step {
+      padding: 20px;
+      background: rgba(15,15,25,0.6);
+      border: 1px solid rgba(34,211,238,0.1);
+      border-left: 2px solid #22d3ee;
+      transition: 0.3s;
+    }
+    .qa-step:hover {
+      transform: translateY(-2px);
+      border-color: rgba(34,211,238,0.25);
+    }
+    .step-num {
+      font-family: var(--mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #22d3ee;
+      margin-bottom: 8px;
+      text-shadow: 0 0 16px rgba(34,211,238,0.4);
+    }
+    .qa-step h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .qa-step p {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    .tool-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .tool-chip {
+      padding: 8px 16px;
+      background: rgba(15,15,25,0.6);
+      border: 1px solid rgba(34,211,238,0.15);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      transition: 0.3s;
+    }
+    .tool-chip:hover {
+      border-color: #22d3ee;
+      color: #22d3ee;
+    }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .mockup-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(15,15,25,0.6);
+      border: 1px solid rgba(34,211,238,0.1);
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+    .mockup-card:hover {
+      border-color: rgba(34,211,238,0.25);
+      transform: translateY(-2px);
+    }
+    .mockup-card span.mockup-label {
+      padding: 24px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .mockup-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .process-step {
+      padding: 24px;
+      background: rgba(15,15,25,0.6);
+      border: 1px solid rgba(34,211,238,0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+    .process-step:hover {
+      border-color: rgba(34,211,238,0.25);
+      transform: translateY(-2px);
+    }
+    .process-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .process-step h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .process-step p {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    .footer { border-top: 1px solid rgba(34,211,238,0.06); }
+    .footer-inner span { color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 768px) {
+      .project-hero { padding: 120px 16px 40px; }
+      .project-hero h1 { font-size: clamp(1.6rem, 6vw, 2.5rem); }
+      .project-hero p { font-size: 0.9rem; }
+      .project-meta { flex-direction: column; gap: 8px; }
+      .project-section { padding: 40px 16px; }
+      .project-section h2 { font-size: 1.3rem; }
+      .project-section p { font-size: 0.85rem; }
+      .approach-grid { grid-template-columns: 1fr; }
+      .qa-steps { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .mockup-grid { grid-template-columns: 1fr; }
+      .mockup-card { min-height: 160px; }
+    }
+    @media (max-width: 480px) {
+      .project-hero { padding: 100px 12px 32px; }
+      .project-hero h1 { font-size: 1.4rem; }
+      .project-section { padding: 32px 12px; }
+      .project-section h2 { font-size: 1.15rem; }
+      .project-section p { font-size: 0.8rem; line-height: 1.7; }
+      .qa-steps { grid-template-columns: 1fr; }
+      .approach-card { padding: 16px; }
+      .approach-card h3 { font-size: 0.8rem; }
+      .approach-card p { font-size: 0.72rem; }
+      .qa-step { padding: 14px; }
+      .qa-step h3 { font-size: 0.78rem; }
+      .qa-step p { font-size: 0.7rem; }
+      .step-num { font-size: 1.2rem; }
+      .back-link { font-size: 0.68rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="follower"></div>
+
+  <canvas id="workBgCanvas" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+
+  <div class="gradient-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+
+  <div class="bg-shapes">
+    <div class="bg-shape bg-shape--1"></div>
+    <div class="bg-shape bg-shape--2"></div>
+    <div class="bg-shape bg-shape--3"></div>
+    <div class="bg-shape bg-shape--4"></div>
+    <div class="bg-shape bg-shape--5"></div>
+    <div class="bg-shape bg-shape--6"></div>
+    <div class="bg-shape bg-shape--7"></div>
+    <div class="bg-shape bg-shape--8"></div>
+    <div class="bg-shape bg-shape--9"></div>
+    <div class="bg-shape bg-shape--10"></div>
+    <div class="bg-shape bg-shape--11"></div>
+    <div class="bg-shape bg-shape--12"></div>
+  </div>
+
+  <div class="noise-overlay"></div>
+
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">RTW.</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="index.html#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+        <a href="index.html#work" class="nav-link" data-i18n="nav.work">Work</a>
+        <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle Language">
+          <span class="lang-label" id="langLabel">EN</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <a href="index.html#work" class="back-link" data-i18n="sub.back">&larr; Kembali ke Work</a>
+    <h1>QA Automation — Sika Universitas</h1>
+    <div class="project-meta">
+      <div><span data-i18n="sika.metaRole">Peran</span> <span>QA Automation Engineer</span></div>
+      <div><span data-i18n="sika.metaDate">Tanggal</span> <span data-i18n="sika.metaDateVal">2025</span></div>
+    </div>
+    <p data-i18n="sika.hero">Membangun dan mengelola framework otomasi pengujian untuk platform akademik Sika Universitas. Mengotomatiskan test case kritis untuk meningkatkan efisiensi QA, mengurangi regresi, dan memastikan kualitas rilis yang konsisten.</p>
+  </section>
+
+  <section class="project-section">
+    <span class="section-num">01</span>
+    <h2 data-i18n="sika.s1">Kenapa QA Automation?</h2>
+    <p data-i18n="sika.s1p1">Sika Universitas adalah platform akmodik yang melayani ribuan pengguna — dosen, mahasiswa, dan admin. Dengan siklus rilis yang cepat dan banyaknya fitur modul, manual testing mulai menjadi bottleneck. QA Automation hadir untuk menangani regression testing yang repetitive, mempercepat feedback loop, dan memastikan setiap deployment tidak merusak fitur yang sudah ada.</p>
+    <p style="margin-top: 12px;" data-i18n="sika.s1p2">Gue ambil peran QA Automation Engineer untuk merancang framework dari nol, menulis test script, dan membangun pipeline yang bisa jalan otomatis setiap ada perubahan kode.</p>
+  </section>
+
+  <section class="project-section">
+    <span class="section-num">02</span>
+    <h2 data-i18n="sika.s2">Automation Approach</h2>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <h3 data-i18n="sika.s2c1">Test Framework Design</h3>
+        <p data-i18n="sika.s2c1p">Merancang struktur framework yang scalable dengan page object model, reusable components, dan konfigurasi environment yang fleksibel.</p>
+      </div>
+      <div class="approach-card">
+        <h3 data-i18n="sika.s2c2">Script Development</h3>
+        <p data-i18n="sika.s2c2p">Menulis test script end-to-end untuk alur kritis: login, input nilai, pengajuan cuti, monitoring kehadiran, dan manajemen akun.</p>
+      </div>
+      <div class="approach-card">
+        <h3 data-i18n="sika.s2c3">CI/CD Integration</h3>
+        <p data-i18n="sika.s2c3p">Mengintegrasikan test otomasi ke dalam pipeline CI/CD sehingga setiap perubahan kode otomatis diuji sebelum deployment ke production.</p>
+      </div>
+      <div class="approach-card">
+        <h3 data-i18n="sika.s2c4">Reporting & Metrics</h3>
+        <p data-i18n="sika.s2c4p">Membuat laporan hasil test yang jelas — pass/fail rate, coverage, dan detail error — agar tim dev bisa langsung tahu area yang perlu diperbaiki.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <span class="section-num">03</span>
+    <h2 data-i18n="sika.s3">Automation Workflow</h2>
+    <div class="qa-steps">
+      <div class="qa-step">
+        <div class="step-num">01</div>
+        <h3 data-i18n="sika.s3s1">Test Analysis</h3>
+        <p data-i18n="sika.s3s1p">Menganalisis test case manual yang ada, mengidentifikasi mana yang paling cocok untuk diotomatisasi berdasarkan frekuensi dan kompleksitas.</p>
+      </div>
+      <div class="qa-step">
+        <div class="step-num">02</div>
+        <h3 data-i18n="sika.s3s2">Script Writing</h3>
+        <p data-i18n="sika.s3s2p">Menulis test script menggunakan Selenium WebDriver dengan bahasa pemrograman yang sesuai, mengikuti pola Page Object Model.</p>
+      </div>
+      <div class="qa-step">
+        <div class="step-num">03</div>
+        <h3 data-i18n="sika.s3s3">Execution & Debug</h3>
+        <p data-i18n="sika.s3s3p">Menjalankan test suite secara otomatis, menganalisis hasil kegagalan, dan melakukan debugging untuk memastikan test stabil.</p>
+      </div>
+      <div class="qa-step">
+        <div class="step-num">04</div>
+        <h3 data-i18n="sika.s3s4">Maintenance</h3>
+        <p data-i18n="sika.s3s4p">Memelihara test suite saat ada perubahan fitur, memperbarui locator, dan mengoptimalkan performa test agar tetap relevan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <span class="section-num">04</span>
+    <h2 data-i18n="sika.s4">Tools & Technologies</h2>
+    <p data-i18n="sika.s4p">Stack yang gue pakai untuk membangun dan menjalankan framework otomasi pengujian.</p>
+    <div class="tool-chips">
+      <span class="tool-chip">Selenium WebDriver</span>
+      <span class="tool-chip">Python</span>
+      <span class="tool-chip">Pytest</span>
+      <span class="tool-chip">Page Object Model</span>
+      <span class="tool-chip">Allure Reports</span>
+      <span class="tool-chip">GitHub Actions</span>
+      <span class="tool-chip">Chrome DevTools</span>
+      <span class="tool-chip">Postman</span>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <span class="section-num">05</span>
+    <h2 data-i18n="sika.s5">Test Automation Pipeline</h2>
+    <p data-i18n="sika.s5p">Alur kerja otomasi yang gue implementasikan untuk memastikan setiap rilis teruji secara konsisten.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-icon">&#9881;</div>
+        <h3 data-i18n="sika.s5c1">Trigger</h3>
+        <p data-i18n="sika.s5c1p">Test otomatis jalan setiap ada push ke branch main atau pull request baru dibuat.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon">&#9889;</div>
+        <h3 data-i18n="sika.s5c2">Execute</h3>
+        <p data-i18n="sika.s5c2p">Seluruh test suite dijalankan di environment staging dengan parallel execution untuk kecepatan.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon">&#9989;</div>
+        <h3 data-i18n="sika.s5c3">Report</h3>
+        <p data-i18n="sika.s5c3p">Hasil test dilaporkan otomatis ke tim — termasuk screenshot jika ada kegagalan untuk debugging cepat.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <span class="section-num">06</span>
+    <h2 data-i18n="sika.s6">Screenshot Hasil Automation</h2>
+    <p data-i18n="sika.s6p">Beberapa hasil dari proses pengujian otomasi yang sudah dijalankan pada platform Sika Universitas.</p>
+    <div class="mockup-grid">
+      <div class="mockup-card">
+        <span class="mockup-label">Test Result Overview</span>
+        <img src="image/QA-sika-1-of-2.png" alt="Test Result Overview" style="display:none" onload="this.style.display='block'; this.previousElementSibling.style.display='none';" onerror="this.remove();">
+      </div>
+      <div class="mockup-card">
+        <span class="mockup-label">Automation Report</span>
+        <img src="image/QA-sika-2-of-2.png" alt="Automation Report" style="display:none" onload="this.style.display='block'; this.previousElementSibling.style.display='none';" onerror="this.remove();">
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <span class="section-num">07</span>
+    <h2 data-i18n="sika.s7">Impact & Results</h2>
+    <p data-i18n="sika.s7p1">Implementasi QA Automation di Sika Universitas memberikan dampak signifikan terhadap proses development dan kualitas produk.</p>
+    <p style="margin-top: 12px;" data-i18n="sika.s7p2">Dengan otomasi, waktu testing berkurang drastis, bug ditemukan lebih cepat, dan tim develop lebih percaya diri dalam merilis fitur baru. Framework ini terus berkembang seiring bertambahnya fitur platform.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>&copy; 2025 Rizki Tri Wahyudi</span>
+        <span>Jakarta, ID</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=101"></script>
+</body>
+</html>
