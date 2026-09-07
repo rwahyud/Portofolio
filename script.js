@@ -815,17 +815,18 @@ const projects = [
     bg: 'dfarm',
     img: 'image/logo dfarmdream.png'   // <-- hapus ../
   },
-  {
-    title: 'UI/UX Design',
-    subtitle: 'Mobile App Design',
-    category: 'DESIGN',
-    desc_id: 'Desain antarmuka mobile app dengan fokus user experience. Wireframing, prototyping, dan design system di Figma.',
-    desc_en: 'Mobile app interface design focused on user experience. Wireframing, prototyping, and design system in Figma.',
-    tags: ['Figma', 'UI/UX'],
-    link: 'figma.html',
-    bg: 'figma',
-    img: 'image/logo-figma.png'
-  },
+  // === HIDDEN: UI/UX Design (Figma) project — uncomment to restore ===
+  // {
+  //   title: 'UI/UX Design',
+  //   subtitle: 'Mobile App Design',
+  //   category: 'DESIGN',
+  //   desc_id: 'Desain antarmuka mobile app dengan fokus user experience. Wireframing, prototyping, dan design system di Figma.',
+  //   desc_en: 'Mobile app interface design focused on user experience. Wireframing, prototyping, and design system in Figma.',
+  //   tags: ['Figma', 'UI/UX'],
+  //   link: 'figma.html',
+  //   bg: 'figma',
+  //   img: 'image/logo-figma.png'
+  // },
   {
     title: 'Website GPX',
     subtitle: 'JALUR — Berbagi Jejak GPX',
